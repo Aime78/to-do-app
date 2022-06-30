@@ -1,1 +1,444 @@
+/*
+COLOR PALETTE
+#007fff BLUE - FOR HEADER
+#f5fafa WHITE - FOR MAIN
+#003459 DARK BLUE - FOR SIDEBAR
+#007fff BLUE - FOR FOOTER
 
+FONT PALETTE
+font-family: 'Poppins', sans-serif; FOR THE TITLE
+font-family: 'Source Sans Pro', sans-serif; FOR THE TEXT
+*/
+
+/* Global styles
+-------------------------------------------------- */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *after {
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+/* Header
+-------------------------------------------------- */
+header {
+    background-color: #007fff;
+    padding: 20px;
+    color: #f5fafa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+/* Sidebar 
+-------------------------------------------------- */
+aside {
+    background-color: #003459;
+    padding: 20px;
+    color: #f5fafa;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.25em;
+    width: 25vw;
+    padding: 30px 0px 30px 60px;
+}
+
+.subproject {
+    border: 1px solid #f5fafa;
+}
+
+/* add-project-menu */
+.project-popup-menu {
+    border: 1px solid black;
+    width: 500px;
+    height: 320px;
+    background-color: #f5fafa;
+}
+
+.project-container {
+    border: 1px solid red;
+    display: flex;
+    
+}
+
+.close-menu {
+    border: 1px solid blue;
+    text-align: end;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    padding: 3px 5px;
+}
+
+.close-menu > span:hover {
+    cursor: pointer;
+}
+
+.side-menu {
+    border-right: 2px solid blue;
+    width: 150px;
+    font-family: 'Poppins', sans-serif;
+    padding-right: 35px;
+}
+
+.side-menu > ul {
+    list-style-type: none;
+    color: #003459;
+}
+
+.project-title {
+    display: none;
+    border: 1px solid red;
+    flex: 1;
+}
+
+.project-title > input {
+    background-color: #f5fafa;
+    height: 50px;
+    display: inline-block;
+    border: 1px solid #f5fafa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    outline: none;
+    padding: 0px 10px;
+}
+
+.create {
+    margin: 40px 0px 0px 45px;
+    background-color: #007fff;
+    color: #f5fafa;
+}
+
+
+
+#create-note {
+    display: none;
+}
+
+.notes-input {
+    padding-top: 15px;
+}
+
+.note-description-input {
+    border: none;
+    background-color: #f5fafa;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 5px;
+    outline: none;
+}
+
+.notes-input > input {
+    border: none;
+    background-color: #f5fafa;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    height: 30px;
+    font-size: 1.2em;
+    padding: 5px;
+    outline: none;
+}
+
+
+/* Main 
+-------------------------------------------------- */
+main {
+    display: flex;
+}
+
+/* task-list */
+.task-category > h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.35em;
+    margin-bottom: 0;
+}
+
+.home {
+    border: 1px solid red;
+}
+
+.task-category {
+    
+    border: 1px solid red;
+    background-color: #f5fafa;
+    padding: 20px;
+    color: #003459;
+    width: 75vw;
+    padding: 30px 80px;;
+}
+
+.task-header-container {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 0;
+}
+
+.task-header {
+    margin-bottom: 0;
+}
+
+.task-list-container  {
+    border-top: 1px solid #007fff;
+    list-style-type: none;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2em;
+    padding-left: 0px;
+}
+
+.task-list-container > ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.task-container {
+    border-bottom: 1px solid #007fff;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.second-div {
+    display: flex;
+    gap: 10px;
+}
+
+span {
+    display: inline-block;
+}
+
+svg {
+    margin-top: 2px;
+    opacity: 30%;
+}
+
+svg:hover {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.add-task-container {
+    display: flex;
+    gap: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1em;
+}
+
+.add-task {
+    display: none;
+    border: 1px solid #007fff;
+    height: 260px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.task-input {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+}
+
+.task-input > input {
+    background-color: #f5fafa;
+    height: 50px;
+    display: inline-block;
+    border: 1px solid #f5fafa;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    outline: none;
+}
+
+.text-area {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    border: 1px solid #f5fafa;
+    background-color: #f5fafa;
+    outline: none;
+}
+
+.due-date {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.date-input {
+    margin-left: 5px;
+}
+
+.task-details {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.task-details > input {
+    border: 1px solid #007fff;
+    color: #003459;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#priority-label {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+button {
+    border: none;
+    color: #003459;
+    background-color: #f5fafa;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    width: 100px;
+    margin: 0 10px;
+    border-radius: 3px;
+}
+
+.low {
+    border: 1px solid green;
+    font-weight: bold;
+}
+
+.low:hover {
+    background-color: green;
+    color: #f5fafa;
+    cursor: pointer;
+}
+
+.medium {
+    border: 1px solid orange;
+}
+
+.medium:hover {
+    background-color: orange;
+    color: #f5fafa;
+    cursor: pointer;
+}
+
+.high {
+    border: 1px solid red;
+}
+
+.high:hover {
+    background-color: red;
+    color: #f5fafa;
+    cursor: pointer;
+}
+
+.submit {
+    background-color: #007fff;
+    color: #f5fafa;
+    margin: 35px 0;
+    cursor: pointer;
+}
+
+.cancel {
+    background-color: red;
+    color: #f5fafa;
+    cursor: pointer;
+}
+
+/* note-category */
+.note-category {
+    display: none;
+    border: 1px solid #007fff; 
+    width: 75vw;
+}
+
+.all-notes {
+    border: 1px solid green;
+    list-style-type: none;
+    display: flex;
+    gap: 30px;
+    padding: 60px;
+}
+
+.col {
+    border: 1px solid yellowgreen;
+    width: 210px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.note {
+    border: 1px solid red;
+    width: 210px;
+    height: 210px;
+    height: auto;
+    background-color: rgb(248, 248, 248);
+    
+}
+
+.note:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+}
+
+.delete-note {
+    border: 1px solid red;
+    height: 30px;
+    font-size: 23px;
+    font-family: 'Poppins', sans-serif;
+    color: #501f3a;
+    text-align: end;
+    padding: 3px 5px;
+    margin-top: 0;
+}
+
+.delete-note > span:hover {
+    cursor: pointer;
+}
+
+.note-title {
+    border: 1px solid #007fff;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    font-weight: 400;
+    padding: 5px;
+    outline: none;
+}
+
+.note-text {
+    border: 1px solid black;
+    width: 200px;
+    
+    padding: 5px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.1em;
+    outline: none;
+    white-space: pre-wrap;
+}
+
+
+
+/* Footer
+-------------------------------------------------- */
+footer {
+    background-color: #007fff;
+    padding: 20px;
+    color: #f5fafa;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1.2em;
+    text-align: center;
+}
