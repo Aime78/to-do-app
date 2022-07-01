@@ -1,36 +1,37 @@
-
 /**
- *  This is the file where the storage, modification, deletion and retrieval of the data will be handled.
- *  The modification of the data in the dom is done here.
+ * This is the file where all the changes in the dom will be handled.
  */
 
-
-/**
- * This function will handle the change of data in the storage.
+import _ from "lodash";
+import { todoAppTemplate } from "./DOM-template";
+ /**
+ * This function will handle all the tasks operations.
  */
 
-export const taskManager = (taskArray) => {
+export const todoTasks = () => {
 
-    // This is the array that will hold the data.
-    let taskList = taskArray;
+// Set the list of the tasks.
+const tasks = [
+    { title: 'eat', description: 'eat some food', priority: 'high' },
+    { title: 'sleep', description: 'sleep for a while', priority: 'low' },
+    { title: 'code', description: 'code for a while', priority: 'medium' },
+    { title: 'play', description: 'play with your friends', priority: 'high' },
+]; 
 
-    // This will store the tasks in the array.
-    const setTaskList = () => {
-        
-        // taskArray.forEach(task => taskList.push(task));
-    }
-    
-    // This will allow to get all the data from the storage.
-    const getTaskList = () => {
-        
-        return taskList;
-    }
-    
-    return {taskList, getTaskList, setTaskList};
+// Display all the tasks
+const homeTaskContainer = todoAppTemplate().taskContainer;
+const homeTaskList = todoAppTemplate().taskList;
+const homeAddIcone = todoAppTemplate().addTaskIcon;
+
+const tasksTodisplay = taskManagerDisplay().displayTaskList(tasks);
+homeTaskList.innerHTML = tasksTodisplay.outerHTML;
+homeTaskContainer.appendChild(homeTaskList);
+homeTaskContainer.appendChild(homeAddIcone);
+
+return {homeTaskContainer}; 
 }
 
-
-/**
+  /**
  * This function will handle the change of data in the display.
  */
 
@@ -42,9 +43,8 @@ export const taskManagerDisplay = () => {
      * @param {array} title - The list of the tasks to be displayed.
      */
     
-    const displayTaskList = (title, taskList) => {
-        const taskListTitle = document.querySelector('.task-header');
-        taskListTitle.innerHTML = `${title}`;
+    const displayTaskList = (taskList) => {
+
         const taskListContainer = document.createElement('ul');
         
         taskList.forEach(task => {
@@ -58,7 +58,7 @@ export const taskManagerDisplay = () => {
             <div class="second-div">
             <span>${task.priority}</span>
             <span>6/26/2022</span>
-            <span>
+            <span class="list-svg">
                 <svg style="width:20px;height:20px" viewBox="0 0 24 24">
                     <path fill="currentColor" d="M5,3C3.89,3 3,3.89 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19H5V5H12V3H5M17.78,4C17.61,4 17.43,4.07 17.3,4.2L16.08,5.41L18.58,7.91L19.8,6.7C20.06,6.44 20.06,6 19.8,5.75L18.25,4.2C18.12,4.07 17.95,4 17.78,4M15.37,6.12L8,13.5V16H10.5L17.87,8.62L15.37,6.12Z" />
                 </svg>
@@ -75,5 +75,18 @@ export const taskManagerDisplay = () => {
         return taskListContainer;
     }
 
-    return {displayTaskList};
+    //Add and edit task
+    const getTasksInput = (task) => {
+        const title = document.querySelector('.title');
+        const description = document.querySelector('.text-area');
+        const dueDate = document.querySelector('.date-input');
+
+        task.title = title.value;
+        task.description = description.value;
+        task.dueDate = dueDate.value;
+     
+        return task;
+    }
+
+    return {displayTaskList, getTasksInput};
 }
