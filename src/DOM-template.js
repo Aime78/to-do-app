@@ -31,13 +31,14 @@ import _ from "lodash";
     const taskContainer = document.createElement('section');
     taskContainer.classList.add('task-category');
     taskContainer.innerHTML = `<!--****************************** THE TASK SECTION OF THE APP ***********************************-->
-    
-            <div class="task-header-container">
-                <h2 class="task-header">Home</h2>
-                <h2 class="task-header">Due Date</h2>
-            </div>
-            
     `
+    const taskHeader = document.createElement('div');
+    taskHeader.classList.add('task-header-container');
+    taskHeader.innerHTML = `
+    <h2 class="task-header">Home</h2>
+    <h2 class="task-header">Due Date</h2>`
+            
+    
     mainContainer.innerHTML = `${asideContainer.outerHTML}`;
 
     // Create the task list 
@@ -49,7 +50,7 @@ import _ from "lodash";
     addTaskIcon.classList.add('add-task-container');
     addTaskIcon.innerHTML = `
     <span>
-        <svg style="width:22px;height:22px" viewBox="0 0 24 24">
+        <svg style="width:22px;height:22px" viewBox="0 0 24 24" class="add-icon">
             <path fill="currentColor" d="M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M13,7H11V11H7V13H11V17H13V13H17V11H13V7Z" />
         </svg>
     </span>
@@ -75,8 +76,9 @@ import _ from "lodash";
                 <button class="priority medium">medium</button>
                 <button class="priority high">high</button>
             </div>
+            <span style="color: red" class="field-message">Please submit all the fields<span>
         </div>
-        <button class="submit">submit</button>
+        <input type="submit" value="submit" class="submit">
         <button class="cancel">cancel</button>
     </div>
     `
@@ -120,6 +122,6 @@ import _ from "lodash";
     Copyright &copy; Rukundoaime 2022
     `
     return { headerContainer, mainContainer, 
-        footerContainer, asideContainer, taskContainer,
+        footerContainer, asideContainer, taskContainer, taskHeader,
         addTaskIcon, addTaskMenu,taskList, noteContainer};
 }

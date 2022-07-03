@@ -46,7 +46,7 @@ aside {
     font-family: 'Poppins', sans-serif;
     font-size: 1.25em;
     width: 20vw;
-    height: 70vh;
+    height: auto;
     padding: 30px 0px 30px 60px;
 }
 
@@ -155,6 +155,7 @@ aside {
 -------------------------------------------------- */
 main {
     display: flex;
+    height: 80vh;
 }
 
 /* task-list */
@@ -175,37 +176,36 @@ main {
     padding: 20px;
     color: #003459;
     width: 75vw;
-    padding: 30px 80px;;
+    height: auto;
+    padding: 30px 80px;
 }
 
 .task-header-container {
     display: flex;
     justify-content: space-between;
     padding-top: 0;
+    margin-bottom: 0;
 }
 
 .task-header {
     margin-bottom: 0;
 }
 
-.task-list-container  {
+ul {
     border-top: 1px solid #007fff;
     list-style-type: none;
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2em;
     padding-left: 0px;
-}
-
-.task-list-container > ul {
-    margin: 0px;
-    padding: 0px;
+    margin-top: 0;
 }
 
 .task-container {
     border-bottom: 1px solid #007fff;
     display: flex;
     justify-content: space-between;
-    
+    padding-top: 5px;
+    padding-bottom: 0px;
 }
 
 .second-div {
@@ -237,9 +237,14 @@ svg:hover {
 .add-task {
     display: none;
     border: 1px solid #007fff;
-    height: 260px;
+    height: 290px;
     border-radius: 5px;
     padding: 10px;
+}
+
+.field-message {
+    display: none;
+    margin-top: 20px;
 }
 
 .task-input {
@@ -345,7 +350,7 @@ button {
 .submit {
     background-color: #007fff;
     color: #f5fafa;
-    margin: 35px 0;
+    margin: 25px 0;
     cursor: pointer;
 }
 
